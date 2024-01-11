@@ -1,4 +1,6 @@
+import 'package:babynama_assignment/theme/pallete.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class FeatureCard extends StatefulWidget {
   final IconData iconData;
@@ -44,10 +46,10 @@ class _FeatureCardState extends State<FeatureCard> {
               const SizedBox(height: 8),
               Text(
                 widget.text,
-                style: const TextStyle(
+                style: GoogleFonts.openSans(
                   fontSize: 16,
                   fontWeight: FontWeight.bold,
-                  color: Colors.white,
+                  color: Palette.whiteColor,
                 ),
               ),
             ],

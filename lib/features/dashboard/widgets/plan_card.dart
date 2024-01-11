@@ -3,7 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class PlanCard extends StatelessWidget {
-  const PlanCard({super.key, required this.onTap, required this.text});
+  const PlanCard({Key? key, required this.onTap, required this.text})
+      : super(key: key);
 
   final VoidCallback onTap;
   final String text;
@@ -15,22 +16,38 @@ class PlanCard extends StatelessWidget {
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(12),
       ),
-      child: ElevatedButton(
-        onPressed: onTap,
-        style: ElevatedButton.styleFrom(
-          primary: Pallete.blueColor,
-          padding: const EdgeInsets.all(24),
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(12),
-          ),
+      child: Container(
+        decoration: BoxDecoration(
+          color: Palette.blueColor,
+          borderRadius: BorderRadius.circular(12),
         ),
-        child: Text(
-          text,
-          textAlign: TextAlign.center,
-          style: GoogleFonts.openSans(
-            fontSize: 20,
-            color: Pallete.whiteColor,
-          ),
+        child: Row(
+          children: [
+            Container(
+              padding: const EdgeInsets.all(12),
+              child: Image.asset(
+                "assets/images/child.png",
+                height: 60,
+                width: 60,
+              ),
+            ),
+            Expanded(
+              child: InkWell(
+                onTap: onTap,
+                child: Container(
+                  padding: const EdgeInsets.all(24),
+                  child: Text(
+                    text,
+                    textAlign: TextAlign.left,
+                    style: GoogleFonts.openSans(
+                      fontSize: 16,
+                      color: Palette.whiteColor,
+                    ),
+                  ),
+                ),
+              ),
+            ),
+          ],
         ),
       ),
     );

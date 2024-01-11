@@ -1,10 +1,9 @@
-import 'package:babynama_assignment/constants/string_constants.dart';
 import 'package:babynama_assignment/features/autism_detection/screens/quiz.dart';
 import 'package:babynama_assignment/features/dashboard/widgets/feature_card.dart';
 import 'package:babynama_assignment/features/dashboard/widgets/plan_card.dart';
+import 'package:babynama_assignment/features/track_vaccination/screens/main_screen.dart';
 import 'package:babynama_assignment/theme/pallete.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 class DashBoardScreen extends StatefulWidget {
   @override
@@ -30,7 +29,13 @@ class _DashBoardScreenState extends State<DashBoardScreen> {
   void initState() {
     super.initState();
 
-    void trackVaccination() {}
+    void trackVaccination() {
+      Navigator.push(
+        context,
+        MainScreen.route(),
+      );
+    }
+
     ;
 
     void autismDetection() {
@@ -46,13 +51,13 @@ class _DashBoardScreenState extends State<DashBoardScreen> {
       {
         'iconData': Icons.calendar_today,
         'text': 'Track Vaccination',
-        'cardColor': Colors.blue,
+        'cardColor': Palette.tealColor,
         'cardOnTap': trackVaccination,
       },
       {
         'iconData': Icons.extension,
         'text': 'Autism Detection',
-        'cardColor': Colors.green,
+        'cardColor': Palette.brownColor,
         'cardOnTap': autismDetection,
       },
     ];
@@ -82,20 +87,16 @@ class _DashBoardScreenState extends State<DashBoardScreen> {
       drawer: const Drawer(),
       appBar: AppBar(
         centerTitle: true,
-        title: Text(
-          StringConstants.appName,
-          style: GoogleFonts.openSans(
-            color: Pallete.blackColor,
-            fontWeight: FontWeight.bold,
-          ),
+        title: const Text(
+          "Babynama",
         ),
-        iconTheme: const IconThemeData(color: Pallete.blackColor),
       ),
       body: Column(
         children: [
           PlanCard(
             onTap: () {},
-            text: StringConstants.planText,
+            text:
+                "Find the perfect care for your child: Explore Our Plans Now!",
           ),
           Expanded(
             child: GridView.builder(

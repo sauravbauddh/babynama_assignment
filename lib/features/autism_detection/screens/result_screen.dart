@@ -35,22 +35,13 @@ class ResultScreen extends StatelessWidget {
       if (yes <= 4) {
         return Colors.green;
       } else if (yes > 4 && yes <= 9) {
-        return Colors.yellow;
+        return Colors.yellow.shade800;
       } else {
         return Colors.red;
       }
     }
 
     return Scaffold(
-      appBar: AppBar(
-        title: Text('Result Screen'),
-        leading: IconButton(
-          icon: Icon(Icons.arrow_back),
-          onPressed: () {
-            Navigator.of(context).pop();
-          },
-        ),
-      ),
       body: Center(
         child: SingleChildScrollView(
           child: Column(
@@ -78,13 +69,14 @@ class ResultScreen extends StatelessWidget {
                         const SizedBox(height: 20),
                         Text(
                           yes <= 4
-                              ? "Your child has selected $yes 'Yes' out of $total, which might not indicate a higher likelihood. Continue monitoring your child's behavior and consult a healthcare professional if you have concerns."
+                              ? "Your have selected $yes 'Yes' out of $total, which might not indicate a higher likelihood. Continue monitoring your child's behavior and consult a healthcare professional if you have concerns."
                               : (yes > 4 && yes <= 9)
-                                  ? "Your child has selected $yes 'Yes' out of $total, indicating a moderate likelihood. We recommend consulting a healthcare professional for further evaluation."
-                                  : "Your child has selected $yes 'Yes' out of $total, indicating a higher likelihood. We recommend consulting a healthcare professional for further evaluation.",
+                                  ? "Your have selected $yes 'Yes' out of $total, indicating a moderate likelihood. We recommend consulting a healthcare professional for further evaluation."
+                                  : "Your have selected $yes 'Yes' out of $total, indicating a higher likelihood. We recommend consulting a healthcare professional for further evaluation.",
                           textAlign: TextAlign.center,
-                          style: GoogleFonts.lato(
+                          style: GoogleFonts.openSans(
                             fontSize: 20,
+                            fontWeight: FontWeight.w600,
                             color: Colors.white,
                           ),
                         ),
@@ -93,39 +85,43 @@ class ResultScreen extends StatelessWidget {
                   ),
                 ),
               ),
-              SizedBox(height: 20),
-              Row(
+              const SizedBox(height: 20),
+              Column(
+                mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Expanded(
-                    child: Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 20),
-                      child: ElevatedButton.icon(
-                        onPressed: () {
-                          // Add functionality for 'Join our Parents Community' button
-                        },
-                        icon: Icon(Icons.group),
-                        label: Text('Join our Parents Community'),
-                        style: ElevatedButton.styleFrom(
-                          primary: Colors.deepPurple,
-                          textStyle: TextStyle(fontSize: 16),
+                  ElevatedButton(
+                    onPressed: () {},
+                    child: Row(
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        const Icon(Icons.group),
+                        const SizedBox(width: 10),
+                        Text(
+                          "Join our parents community",
+                          style: GoogleFonts.openSans(
+                            fontSize: 16,
+                            fontWeight: FontWeight.w600,
+                          ),
                         ),
-                      ),
+                      ],
                     ),
                   ),
-                  Expanded(
-                    child: Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 20),
-                      child: ElevatedButton.icon(
-                        onPressed: () {
-                          // Add functionality for 'Chat with Doctors' button
-                        },
-                        icon: Icon(Icons.chat),
-                        label: Text('Chat with Doctors'),
-                        style: ElevatedButton.styleFrom(
-                          primary: Colors.blue,
-                          textStyle: TextStyle(fontSize: 16),
+                  const SizedBox(height: 10),
+                  ElevatedButton(
+                    onPressed: () {},
+                    child: Row(
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        const Icon(Icons.chat),
+                        const SizedBox(width: 10),
+                        Text(
+                          "Chat with us",
+                          style: GoogleFonts.openSans(
+                            fontSize: 16,
+                            fontWeight: FontWeight.w600,
+                          ),
                         ),
-                      ),
+                      ],
                     ),
                   ),
                 ],

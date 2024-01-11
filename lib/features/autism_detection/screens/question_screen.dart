@@ -39,7 +39,7 @@ class _QuestionState extends State<QuestionScreen> {
                 margin: const EdgeInsets.only(bottom: 40.0),
                 child: Text(
                   currQuestion.question,
-                  style: GoogleFonts.lato(
+                  style: GoogleFonts.openSans(
                     fontSize: 24,
                     fontWeight: FontWeight.bold,
                   ),

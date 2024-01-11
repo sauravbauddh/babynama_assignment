@@ -55,6 +55,10 @@ class _QuizState extends State<Quiz> {
     }
 
     return Scaffold(
+      appBar: AppBar(
+        centerTitle: true,
+        title: const Text("Autism Detection Quiz"),
+      ),
       body: Container(
         child: screenWidget,
       ),

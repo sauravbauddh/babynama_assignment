@@ -1,4 +1,4 @@
-import 'package:babynama_assignment/features/dashboard/screen/dashboard.dart';
+import 'package:babynama_assignment/features/dashboard/screens/dashboard.dart';
 import 'package:babynama_assignment/theme/app_theme.dart';
 import 'package:flutter/material.dart';
 
