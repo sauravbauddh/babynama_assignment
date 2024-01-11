@@ -13,8 +13,6 @@ class VaccinationCard extends StatefulWidget {
 }
 
 class _VaccinationCardState extends State<VaccinationCard> {
-  DateTime? _selectedDate;
-
   @override
   Widget build(BuildContext context) {
     final daysRemaining =
@@ -106,18 +104,11 @@ class _VaccinationCardState extends State<VaccinationCard> {
       firstDate: DateTime.now(),
       lastDate: DateTime(DateTime.now().year + 2),
     );
-
-    if (date != null) {
-      setState(() {
-        _selectedDate = date;
-      });
-    }
   }
 
   Widget _buildInfoButton(BuildContext context) {
     return ElevatedButton(
       onPressed: () {
-        // Show detailed information about the vaccination (replace with your implementation)
         showDialog(
           context: context,
           builder: (context) => AlertDialog(

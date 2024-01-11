@@ -3,7 +3,7 @@ import 'package:babynama_assignment/theme/app_theme.dart';
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
@@ -14,7 +14,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'BabyNama',
+      title: 'Babynama',
       theme: AppTheme.theme,
       home: DashBoardScreen(),
     );

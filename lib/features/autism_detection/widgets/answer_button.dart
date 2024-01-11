@@ -13,23 +13,24 @@ class AnswerButton extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.all(8.0),
       child: ElevatedButton(
-          style: ElevatedButton.styleFrom(
-            padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 40),
-            foregroundColor: Colors.white,
-            backgroundColor: Palette.pinkColor,
-            shape:
-                RoundedRectangleBorder(borderRadius: BorderRadius.circular(30)),
+        style: ElevatedButton.styleFrom(
+          padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 40),
+          foregroundColor: Colors.white,
+          backgroundColor: Palette.pinkColor,
+          shape:
+              RoundedRectangleBorder(borderRadius: BorderRadius.circular(30)),
+        ),
+        onPressed: onTap,
+        child: Text(
+          answer,
+          style: GoogleFonts.openSans(
+            fontSize: 16,
+            fontWeight: FontWeight.bold,
+            color: Palette.whiteColor,
           ),
-          onPressed: onTap,
-          child: Text(
-            answer,
-            style: GoogleFonts.openSans(
-              fontSize: 16,
-              fontWeight: FontWeight.bold,
-              color: Palette.whiteColor,
-            ),
-            textAlign: TextAlign.center,
-          )),
+          textAlign: TextAlign.center,
+        ),
+      ),
     );
   }
 }
